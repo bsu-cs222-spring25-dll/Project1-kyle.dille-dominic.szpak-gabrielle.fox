@@ -14,7 +14,14 @@ public class stringAssemblyTest {
         urlFinder urlFinder = new urlFinder();
         String apiUrl = urlFinder.getapi("");
         assertEquals(testURL,apiUrl);
-
     }
+    @Test
+    public void testUserInput(){
+        userInterface userInterface = new userInterface();
+        String testArticleTitle = "lightning";
+        String inputArticleTitle = userInterface.recentInput();
+        assertEquals(testArticleTitle, inputArticleTitle);
+    }
+
 
 }
