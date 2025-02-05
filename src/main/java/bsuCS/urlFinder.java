@@ -11,8 +11,7 @@ public class urlFinder {
 
         String apiUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles="
                 + encodedTitle + "&formatversion=2&rvprop=timestamp%7Cuser&rvslots=*&rvlimit=21";
-
-        // Create URL object
+        
         URL url = new URL(apiUrl);
         return(url);
     }
