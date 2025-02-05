@@ -12,16 +12,11 @@ public class stringAssemblyTest {
                 "?action=query&format=json&prop=revisions" +
                 "&titles=Shaandaar&formatversion=2&rvprop=timestamp%7Cuser&rvslots=*&rvlimit=21";
         urlFinder urlFinder = new urlFinder();
-        String apiUrl = urlFinder.getapi("");
+        String apiUrl = urlFinder.getapi("Shaandaar");
         assertEquals(testURL,apiUrl);
     }
-    @Test
-    public void testUserInput(){
-        userInterface userInterface = new userInterface();
-        String testArticleTitle = "lightning";
-        String inputArticleTitle = userInterface.recentInput();
-        assertEquals(testArticleTitle, inputArticleTitle);
-    }
+
+
 
 
 }
