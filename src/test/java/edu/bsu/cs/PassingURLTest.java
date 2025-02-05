@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class stringAssemblyTest {
+public class PassingURLTest {
     @Test
     public void testApiURL(){
         String testURL = "https://en.wikipedia.org/w/api.php" +
