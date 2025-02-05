@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bsuCS.testApiUrl" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-05T20:41:49" hostname="KMONEYPC" time="0.045">
+  <properties/>
+  <testcase name="passingURLTest()" classname="bsuCS.testApiUrl" time="0.045"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
