@@ -21,7 +21,7 @@ public class testApiUrl {
         public void wikiApiTest() throws IOException {
             wikiArticle exampleArticle = new wikiArticle();
             InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-            String timestamp = wikiArticle.timestamp(testDataStream);
+            String timestamp = wikiArticle.recentTimestamp(testDataStream);
             assertEquals("2025-01-29T16:45:38Z",timestamp);
         }
     }
