@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="bsuCS.testApiUrl" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-05T20:41:49" hostname="KMONEYPC" time="0.045">
+<testsuite name="bsuCS.testApiUrl" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-02-06T01:30:52" hostname="KMONEYPC" time="0.135">
   <properties/>
-  <testcase name="passingURLTest()" classname="bsuCS.testApiUrl" time="0.045"/>
+  <testcase name="wikiApiTest()" classname="bsuCS.testApiUrl" time="0.073"/>
+  <testcase name="passingURLTest()" classname="bsuCS.testApiUrl" time="0.06"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
 </testsuite>
