@@ -27,9 +27,8 @@ public class testApiUrl {
         }
         @Test
         public void wikipediaJSONTest() throws Exception {
-            //JSONObject jsonFetcher = new JsonFetcher();
             JSONObject wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Frank Zappa"));
-
+            //turn JSONObject into InputStream for wikiArticle to parse
             assertEquals(wikiTestFile,"");
     }
     }
