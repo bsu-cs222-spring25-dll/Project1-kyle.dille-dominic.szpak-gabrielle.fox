@@ -7,9 +7,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class wikiArticle {
-    public static String recentTimestamp(InputStream testDataStream) throws IOException {
-
-        JSONArray result = (JSONArray) JsonPath.read(testDataStream, "$..timestamp");
-        return result.get(0).toString();
+    private JSONArray timestamps;
+    public static JSONArray pullTimestamps(InputStream testDataStream) throws IOException {
+        JSONArray timestamps = (JSONArray) JsonPath.read(testDataStream, "$..timestamp");
+        return timestamps;
+    }
+    public static void pullRevisionUser(InputStream testDataStream) throws IOException{
+        JSONArray users = (JSONArray) JsonPath.read(testDataStream, "$..user");
     }
 }
