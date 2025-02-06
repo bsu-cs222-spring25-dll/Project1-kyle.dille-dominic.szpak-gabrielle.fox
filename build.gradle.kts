@@ -14,6 +14,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("com.jayway.jsonpath:json-path:2.9.0")
     implementation("net.minidev:json-smart:2.5.1")
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation("org.json:json:20250107")
+
 }
 
 tasks.test {

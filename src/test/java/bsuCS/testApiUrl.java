@@ -1,5 +1,6 @@
 package bsuCS;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -24,5 +25,12 @@ public class testApiUrl {
             String timestamp = wikiArticle.pullTimestamps(testDataStream).getFirst().toString();
             assertEquals("2025-01-29T16:45:38Z",timestamp);
         }
+        @Test
+        public void wikipediaJSONTest() throws Exception {
+            //JSONObject jsonFetcher = new JsonFetcher();
+            JSONObject wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Frank Zappa"));
+
+            assertEquals(wikiTestFile,"");
+    }
     }
 
