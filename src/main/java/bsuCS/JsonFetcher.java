@@ -11,7 +11,7 @@ import java.net.URL;
 
 
 public class JsonFetcher {
-    public static JSONObject fetchJsonFromUrl(URL url) throws Exception {
+    public static String fetchJsonFromUrl(URL url) throws Exception {
         // Creates the url object
 
         // Opens connection to url
@@ -34,6 +34,6 @@ public class JsonFetcher {
         in.close();
 
         // Convert the response string and returns it
-        return new JSONObject(response.toString());
+        return response.toString();
     }
 }

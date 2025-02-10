@@ -29,10 +29,8 @@ public class testApiUrl {
         }
         @Test
         public void wikipediaJSONTest() throws Exception {
-            JSONObject wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
-            //turn JSONObject into InputStream for wikiArticle to parse
-            String jsonString = wikiTestFile.toString();
-            InputStream jsonStream = new ByteArrayInputStream(jsonString.getBytes(StandardCharsets.UTF_8));
+            String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
+            InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
             assertEquals(wikiTestFile,wikiArticle.pullTimestamps(jsonStream));
     }
     }
