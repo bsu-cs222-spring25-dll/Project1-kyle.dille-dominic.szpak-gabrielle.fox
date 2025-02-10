@@ -3,9 +3,11 @@ package bsuCS;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,9 +29,11 @@ public class testApiUrl {
         }
         @Test
         public void wikipediaJSONTest() throws Exception {
-            JSONObject wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Frank Zappa"));
+            JSONObject wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
             //turn JSONObject into InputStream for wikiArticle to parse
-            assertEquals(wikiTestFile,"");
+            String jsonString = wikiTestFile.toString();
+            InputStream jsonStream = new ByteArrayInputStream(jsonString.getBytes(StandardCharsets.UTF_8));
+            assertEquals(wikiTestFile,wikiArticle.pullTimestamps(jsonStream));
     }
     }
 
