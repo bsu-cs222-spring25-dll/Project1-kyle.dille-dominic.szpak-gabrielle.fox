@@ -10,7 +10,7 @@ public class urlFinder {
         String encodedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8);
 
         String apiUrl = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles="
-                + encodedTitle + "&rvprop=timestamp|user&rvlimit=4&redirects";
+                + encodedTitle + "&rvprop=timestamp|user&rvlimit=21&redirects";
 
         URL url = new URL(apiUrl);
         return(url);
