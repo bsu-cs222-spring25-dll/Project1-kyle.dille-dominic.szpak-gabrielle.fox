@@ -26,7 +26,7 @@ public class wikiArticle {
         testDataStream.reset();
     }
     public void pullRedirects(InputStream testDataStream) throws IOException {
-        redirect = JsonPath.read(testDataStream,"$..to").toString();
+        redirect = JsonPath.read(testDataStream,"$..redirects[0].to").toString();
         testDataStream.reset();
     }
 
