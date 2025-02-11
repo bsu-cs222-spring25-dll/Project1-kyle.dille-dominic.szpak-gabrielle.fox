@@ -25,15 +25,12 @@ public class Main {
             // fetches data from article
             String wikiJson = JsonFetcher.fetchJsonFromUrl(apiUrl);
             InputStream testDataStream = new ByteArrayInputStream(wikiJson.getBytes(StandardCharsets.UTF_8));
-            JSONArray timestamps = wikiArticle.pullTimestamps(testDataStream);
-            JSONArray users = wikiArticle.pullRevisionUser(testDataStream);
+            wikiArticle article = new wikiArticle(testDataStream);
 
 
             //call to format
-            String message = PrintFormat.format(timestamps, users);
+            String message = PrintFormat.format(article);
             System.out.println(message);
-
-
 
 
         } catch (IOException e) {

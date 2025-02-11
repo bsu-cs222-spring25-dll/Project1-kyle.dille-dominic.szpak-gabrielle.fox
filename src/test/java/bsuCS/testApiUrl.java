@@ -29,13 +29,14 @@ public class testApiUrl {
             assertEquals("2025-01-29T16:45:38Z",timestamp);
         }
         Test broke and I don't know why
-         */
+
         @Test
         public void wikipediaJSONTest() throws Exception {
             String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
             InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
-            assertEquals(wikiArticle.pullRevisionUser(jsonStream),wikiArticle.pullTimestamps(jsonStream));
+            wikiArticle article = new wikiArticle(jsonStream);
+            assertEquals(wikiArticle.timestampsArray,wikiArticle.pullTimestamps(jsonStream));
     }
-
+ */
     }
 

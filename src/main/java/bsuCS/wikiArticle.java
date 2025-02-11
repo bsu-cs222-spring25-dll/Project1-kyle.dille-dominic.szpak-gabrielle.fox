@@ -7,20 +7,27 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class wikiArticle {
-    public static JSONArray pullTimestamps(InputStream testDataStream) throws IOException {
-        JSONArray timestampsArray = (JSONArray) JsonPath.read(testDataStream, "$..timestamp");
-        testDataStream.reset();
-        return timestampsArray;
+    String redirect;
+    JSONArray timestampsArray;
+    JSONArray usersArray;
+
+    wikiArticle(InputStream testDataStream) throws IOException {
+        pullRedirects(testDataStream);
+        pullTimestamps(testDataStream);
+        pullRevisionUser(testDataStream);
     }
-    public static JSONArray pullRevisionUser(InputStream testDataStream) throws IOException{
-        JSONArray usersArray = (JSONArray) JsonPath.read(testDataStream, "$..user");
+
+    public void pullTimestamps(InputStream testDataStream) throws IOException {
+        timestampsArray = (JSONArray) JsonPath.read(testDataStream, "$..timestamp");
         testDataStream.reset();
-        return usersArray;
     }
-    public static String pullRedirects(InputStream testDataStream) throws IOException {
-        String redirectString = JsonPath.read(testDataStream,"$..to").toString();
+    public void pullRevisionUser(InputStream testDataStream) throws IOException{
+        usersArray = (JSONArray) JsonPath.read(testDataStream, "$..user");
         testDataStream.reset();
-        return redirectString;
+    }
+    public void pullRedirects(InputStream testDataStream) throws IOException {
+        redirect = JsonPath.read(testDataStream,"$..to").toString();
+        testDataStream.reset();
     }
 
 }
