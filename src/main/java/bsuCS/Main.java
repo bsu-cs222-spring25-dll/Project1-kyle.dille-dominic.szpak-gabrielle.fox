@@ -1,8 +1,5 @@
 package bsuCS;
 
-import net.minidev.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,9 +31,9 @@ public class Main {
 
 
         } catch (IOException e) {
-            System.out.println("Error retrieving the Wikipedia article: " + e.getMessage());
+            System.err.println("Error retrieving the Wikipedia article: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error processing the Wikipedia data: " + e.getMessage());
+            System.err.println("Error processing the Wikipedia data: " + e.getMessage());
         }
     }
 }
