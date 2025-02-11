@@ -36,5 +36,6 @@ public class testApiUrl {
             InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
             assertEquals(wikiArticle.pullRevisionUser(jsonStream),wikiArticle.pullTimestamps(jsonStream));
     }
+
     }
 

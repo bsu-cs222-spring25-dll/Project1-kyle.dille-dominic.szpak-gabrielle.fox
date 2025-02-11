@@ -22,4 +22,5 @@ public class wikiArticle {
         testDataStream.reset();
         return redirectString;
     }
+
 }
