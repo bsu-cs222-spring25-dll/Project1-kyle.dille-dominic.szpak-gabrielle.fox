@@ -31,7 +31,7 @@ public class testApiUrl {
         public void wikipediaJSONTest() throws Exception {
             String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
             InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
-            assertEquals(wikiTestFile,wikiArticle.pullTimestamps(jsonStream));
+            assertEquals(wikiArticle.pullRevisionUser(jsonStream),wikiArticle.pullTimestamps(jsonStream));
     }
     }
 
