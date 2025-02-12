@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Input article name
         System.out.println("Enter the name of a Wikipedia article:");
-        String articleName = scnr.nextLine();
+        String articleName = scanner.nextLine();
 
         try {
             // fetches the URL for the Wikipedia API using urlFinder class
@@ -21,8 +21,8 @@ public class Main {
 
             // fetches data from article
             String wikiJson = JsonFetcher.fetchJsonFromUrl(apiUrl);
-            InputStream testDataStream = new ByteArrayInputStream(wikiJson.getBytes(StandardCharsets.UTF_8));
-            wikiArticle article = new wikiArticle(testDataStream);
+            InputStream jsonStream = new ByteArrayInputStream(wikiJson.getBytes(StandardCharsets.UTF_8));
+            wikiArticle article = new wikiArticle(jsonStream);
 
 
             //call to format

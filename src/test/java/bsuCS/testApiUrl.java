@@ -1,8 +1,8 @@
 package bsuCS;
 
-import org.json.JSONObject;
+import com.jayway.jsonpath.JsonPath;
+import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,23 +20,26 @@ public class testApiUrl {
             URL trialAPIURL = urlFinder.getapi("Frank Zappa");
             assertEquals(formattedURL,trialAPIURL);
         }
-        /*
+
         @Test
         public void wikiApiTest() throws IOException {
-            wikiArticle exampleArticle = new wikiArticle();
-            InputStream testDataStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-            String timestamp = wikiArticle.pullTimestamps(testDataStream).getFirst().toString();
+
+            InputStream jsonStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
+            wikiArticle exampleArticle = new wikiArticle(jsonStream);
+            String timestamp = exampleArticle.timestampsArray.getFirst().toString();
+
             assertEquals("2025-01-29T16:45:38Z",timestamp);
         }
-        Test broke and I don't know why
+        //Test broke and I don't know why
 
         @Test
         public void wikipediaJSONTest() throws Exception {
             String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
             InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
             wikiArticle article = new wikiArticle(jsonStream);
-            assertEquals(wikiArticle.timestampsArray,wikiArticle.pullTimestamps(jsonStream));
+            JSONArray testTimestampsArray = (JSONArray) JsonPath.read(jsonStream, "$..timestamp");
+            assertEquals(article.timestampsArray,testTimestampsArray);
     }
- */
+
     }
 
