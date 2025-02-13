@@ -14,6 +14,7 @@ public class GraphicalUserInterface extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("test");
         Scene scene = new Scene(new javafx.scene.control.Label("foo"));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
     public static void main(String[] args) {launch(args);}
