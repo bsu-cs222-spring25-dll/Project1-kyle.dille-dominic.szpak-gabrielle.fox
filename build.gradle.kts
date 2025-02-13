@@ -1,8 +1,10 @@
 plugins {
     id("java")
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-group = "org.example"
+group = "edu.bsu.cs"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -18,8 +20,17 @@ dependencies {
     // https://mvnrepository.com/artifact/org.json/json
     implementation("org.json:json:20250107")
 
+
+    implementation("org.slf4j:slf4j-nop:2.0.11")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+javafx {
+    version = "22"
+    modules("javafx.controls", "javafx.fxml")
+}
+application {
+    mainClass.set("bsuCS.GraphicalUserInterface")
 }
