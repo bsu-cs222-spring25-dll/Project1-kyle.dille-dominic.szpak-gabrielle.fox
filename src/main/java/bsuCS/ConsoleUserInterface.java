@@ -7,7 +7,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-public class Main {
+public class ConsoleUserInterface {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
