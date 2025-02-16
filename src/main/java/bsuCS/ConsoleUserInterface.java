@@ -1,34 +1,18 @@
 package bsuCS;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class ConsoleUserInterface {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input article name
         System.out.println("Enter the name of a Wikipedia article:");
         String articleName = scanner.nextLine();
 
         try {
-            // fetches the URL for the Wikipedia API using urlFinder class
-            URL apiUrl = urlFinder.getapi(articleName);
-
-            // fetches data from article
-            String wikiJson = JsonFetcher.fetchJsonFromUrl(apiUrl);
-            InputStream jsonStream = new ByteArrayInputStream(wikiJson.getBytes(StandardCharsets.UTF_8));
-            wikiArticle article = new wikiArticle(jsonStream);
-
-
-            //call to format
-            String message = PrintFormat.format(article);
-            System.out.println(message);
-
+           String outputMessage = wikiPullModel.pullEditHistory(articleName);
+           System.out.println(outputMessage);
 
         } catch (IOException e) {
             System.err.println("Error retrieving the Wikipedia article: " + e.getMessage());
