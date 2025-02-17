@@ -35,6 +35,7 @@ public class GraphicalUserInterface extends Application {
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
+                    wikiPullModel wikiPullModel = new wikiPullModel();
                     String userInput = wikiPullModel.pullEditHistory(inputTextField.getText());
                     outputTextField.setText(userInput);
                 } catch (Exception e) {

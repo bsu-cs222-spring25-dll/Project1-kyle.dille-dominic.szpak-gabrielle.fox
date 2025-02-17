@@ -6,9 +6,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class wikiPullModel {
-    public static String pullEditHistory(String articleName) throws Exception{
+    public String pullEditHistory(String articleName) throws Exception{
         // fetches the URL for the Wikipedia API using urlFinder class
-        URL apiUrl = urlFinder.getapi(articleName);
+        URL apiUrl = urlFinder.getApi(articleName);
 
         // fetches data from article
         String wikiJson = JsonFetcher.fetchJsonFromUrl(apiUrl);

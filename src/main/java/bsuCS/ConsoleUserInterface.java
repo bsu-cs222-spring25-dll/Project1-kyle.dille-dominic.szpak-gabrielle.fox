@@ -11,6 +11,7 @@ public class ConsoleUserInterface {
         String articleName = scanner.nextLine();
 
         try {
+           wikiPullModel wikiPullModel = new wikiPullModel();
            String outputMessage = wikiPullModel.pullEditHistory(articleName);
            System.out.println(outputMessage);
 

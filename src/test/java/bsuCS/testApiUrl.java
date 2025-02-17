@@ -17,7 +17,7 @@ public class testApiUrl {
             String rawURL = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&"
             +"titles=Frank+Zappa&rvprop=timestamp|user&rvlimit=21&redirects";
             URL formattedURL = new URL(rawURL);
-            URL trialAPIURL = urlFinder.getapi("Frank Zappa");
+            URL trialAPIURL = urlFinder.getApi("Frank Zappa");
             assertEquals(formattedURL,trialAPIURL);
         }
 
@@ -34,7 +34,7 @@ public class testApiUrl {
 
         @Test
         public void wikipediaJSONTest() throws Exception {
-            String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getapi("Zappa"));
+            String wikiTestFile = JsonFetcher.fetchJsonFromUrl(urlFinder.getApi("Zappa"));
             InputStream jsonStream = new ByteArrayInputStream(wikiTestFile.getBytes(StandardCharsets.UTF_8));
             wikiArticle article = new wikiArticle(jsonStream);
             JSONArray testTimestampsArray = (JSONArray) JsonPath.read(jsonStream, "$..timestamp");

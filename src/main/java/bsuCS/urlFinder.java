@@ -5,7 +5,7 @@ import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 public class urlFinder {
-    public static URL getapi(String title) throws IOException {
+    public static URL getApi(String title) throws IOException {
         //Shristi Khadka helped with formatting URL code
         String encodedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8);
 
@@ -16,3 +16,4 @@ public class urlFinder {
         return(url);
     }
 }
+
