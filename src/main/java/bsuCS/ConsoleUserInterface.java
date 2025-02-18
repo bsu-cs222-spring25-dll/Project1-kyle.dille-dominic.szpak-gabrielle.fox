@@ -12,7 +12,7 @@ public class ConsoleUserInterface {
 
         try {
            wikiPullModel wikiPullModel = new wikiPullModel();
-           String outputMessage = wikiPullModel.pullEditHistory(articleName);
+           String outputMessage = wikiPullModel.fetchEditHistoryFromWikipedia(articleName);
            System.out.println(outputMessage);
 
         } catch (IOException e) {

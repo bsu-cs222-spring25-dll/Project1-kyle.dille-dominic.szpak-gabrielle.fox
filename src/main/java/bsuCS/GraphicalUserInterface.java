@@ -20,7 +20,6 @@ public class GraphicalUserInterface extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         VBox parent = new VBox();
-        parent.getChildren().add(new Label("yo"));
 
         HBox articleInputArea = new HBox(new Label("Input an article title: "));
         TextField inputTextField = new TextField();
@@ -38,7 +37,7 @@ public class GraphicalUserInterface extends Application {
             public void handle(ActionEvent actionEvent) {
                 try {
                     wikiPullModel wikiPullModel = new wikiPullModel();
-                    String userInput = wikiPullModel.pullEditHistory(inputTextField.getText());
+                    String userInput = wikiPullModel.fetchEditHistoryFromWikipedia(inputTextField.getText());
                     outputTextField.setText(userInput);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
@@ -48,7 +47,7 @@ public class GraphicalUserInterface extends Application {
 
 
 
-        primaryStage.setTitle("test");
+        primaryStage.setTitle("WikipediaEditsHistoryGUI");
         primaryStage.setScene(new Scene(parent));
         primaryStage.show();
     }
