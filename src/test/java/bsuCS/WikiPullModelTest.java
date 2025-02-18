@@ -9,16 +9,9 @@ import java.io.IOException;
 
 public class WikiPullModelTest {
 
-    private wikiArticle mockWikiArticleParser;
-
     private wikiPullModel wikiPullModel;
-
-
     @Before
     public void setUp() {
-        // mock objects
-        mockWikiArticleParser = mock(wikiArticle.class);
-
         // WikiPullModel instance, mocked dependencies
         wikiPullModel = new wikiPullModel();
     }
@@ -34,7 +27,6 @@ public class WikiPullModelTest {
         try {
             // return predefined data
             when(JsonFetcher.fetchJsonFromUrl(any())).thenReturn(mockJson);  // Return mock JSON
-            when(mockWikiArticleParser.parse(any())).thenReturn(mockArticle);  // Return mock article
             when(PrintFormat.format(any(wikiArticle.class))).thenReturn(formattedMessage);  // Return formatted string
 
             //Calsl the method to teste
@@ -71,7 +63,6 @@ public class WikiPullModelTest {
         String articleName = "Java_(programming_language)";
         String mockJson = "{\"some\": \"mock json\"}";
         when(JsonFetcher.fetchJsonFromUrl(any())).thenReturn(mockJson);
-        when(mockWikiArticleParser.parse(any())).thenThrow(new IOException("Mocked JsonParsing Exception"));
 
         try {
 
