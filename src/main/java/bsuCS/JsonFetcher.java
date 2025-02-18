@@ -12,7 +12,6 @@ import java.net.URL;
 
 public class JsonFetcher {
     public static String fetchJsonFromUrl(URL url) throws Exception {
-        // Creates the url object
 
         // Opens connection to url
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();

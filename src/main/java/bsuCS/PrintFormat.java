@@ -8,7 +8,8 @@ public class PrintFormat {
         JSONArray timestamps = article.timestampsArray;
         JSONArray users = article.usersArray;
         String redirect = article.redirect;
-        String formattedString= "directed to " +redirect+'\n';
+        String formattedString= "";
+        if(!redirect.equals("[]")){formattedString= formattedString+ "directed to " +redirect+'\n';}
         for(int i = 0; i< timestamps.size();i++){
             String timestamp = (String) timestamps.get(i);
             String user = (String) users.get(i);
